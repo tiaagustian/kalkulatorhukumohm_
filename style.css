@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #3852B4, #EAF0FF);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== LAYOUT UTAMA ===== */
+.app {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+
+    justify-content: center; /* biar benar2 di tengah */
+    align-items: stretch;
+}
+
+/* ===== KARTU ===== */
+.container,
+.sidebar {
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* kalkulator */
+.container {
+    background: linear-gradient(135deg, #3852B4, #5E7AC4);
+    padding: 25px;
+    width: 100%;
+    max-width: 350px;
+    color: #fff;
+}
+
+/* sidebar */
+.sidebar {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    width: 100%;
+    max-width: 280px;
+    color: #fff;
+
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+/* ===== TEXT ===== */
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* ===== INPUT ===== */
+select,
+input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* error */
+#error {
+    color: #ffb4b4;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #E88935, #E3B376);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* tombol kecil di sidebar */
+.sidebar button {
+    width: auto;
+    padding: 5px 10px;
+    background: #ff6b6b;
+}
+
+/* ===== HASIL ===== */
+.hasil {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+
+.hasil.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* item riwayat */
+.riwayat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start; /* biar tidak kepotong atas */
+    }
+
+    .app {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container,
+    .sidebar {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .sidebar {
+        max-height: none;
+    }
+}
+
+/* ===== HP ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .sidebar {
+        border-radius: 14px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    .sidebar {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    select,
+    input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .riwayat-item {
+        font-size: 13px;
+        padding: 6px;
+    }
+}
